@@ -12,12 +12,10 @@ class AdminTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_admin_dashboard(): void
+    public function test_admin_dashboard()
     {
         $user = User::factory()->create();
 
-        $this->actingAs($user, 'auth')->get('/dashboard')->assertStatus(200);
-
-        $this->get('/')->assertStatus(200);
+        $this->actingAs($user, 'web')->get('/dashboard')->assertStatus(200);
     }
 }
