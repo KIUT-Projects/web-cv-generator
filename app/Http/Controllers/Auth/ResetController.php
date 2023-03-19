@@ -1,17 +1,17 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Password;
-use Illuminate\Support\Facades\View;
 
 class ResetController extends Controller
 {
     public function create()
     {
         return view('session/reset-password/sendEmail');
-        
+
     }
 
     public function sendEmail(Request $request)

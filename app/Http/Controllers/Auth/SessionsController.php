@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
-use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
 
@@ -17,7 +17,7 @@ class SessionsController extends Controller
     {
         $attributes = request()->validate([
             'email'=>'required|email',
-            'password'=>'required' 
+            'password'=>'required'
         ]);
 
         if(Auth::attempt($attributes))
@@ -30,7 +30,7 @@ class SessionsController extends Controller
             return back()->withErrors(['email'=>'Email or password invalid.']);
         }
     }
-    
+
     public function destroy()
     {
 
