@@ -12,7 +12,7 @@ class AdminTest extends TestCase
     /**
      * A basic feature test example.
      */
-    public function test_example(): void
+    public function test_admin_dashboard(): void
     {
         $user = User::factory()->create();
 
