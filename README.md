@@ -1,6 +1,26 @@
-## Web CV Generator
+# Web CV Generator
 
 ![Screen 1](.github/images/screen-1.png)
+
+## About Porject
+> Some information ...
+
+## Requirements
+- PHP ^8.0.2
+- Composer 2
+- Laravel v10
+- npm v9.6.0
+- node v18.1.0
+- Bootstrap v5
+
+## Laravel required PHP Extensions
+- OpenSSL PHP Extension
+- PDO PHP Extension
+- Mbstring PHP Extension
+- Tokenizer PHP Extension
+- XML PHP Extension
+
+## Install guide
 
 ```shell
 composer install
@@ -11,11 +31,11 @@ npm install
 ```
 
 ```shell
-php artisan storage:link
+php artisan key:generate
 ```
 
 ```shell
-php artisan key:generate
+php artisan storage:link
 ```
 
 Set .env database variables
@@ -29,11 +49,11 @@ DB_PASSWORD=
 ```
 
 ```shell
-php artisan migrate
+php artisan optimize:clear
 ```
 
 ```shell
-php artisan optimize:clear
+php artisan migrate --seed
 ```
 
 Run Laravel server
@@ -46,13 +66,28 @@ Run Vite server (Frontend)
 npm run dev
 ```
 
+## Database Diagram
+![Database](.github/images/database.png)
+- https://dbdiagram.io/d/63f460ce296d97641d827b4d
 
-### Database Diagram:
-```
-https://dbdiagram.io/d/63f460ce296d97641d827b4d
-```
-
-### Admin Panel:
+## Screenshots
 ![Login Page](.github/images/login.png)
 ![Register Page](.github/images/register.png)
 ![Forgot Page](.github/images/forgot.png)
+
+
+## Used articles
+- https://www.creative-tim.com/product/soft-ui-dashboard
+
+## Support
+> If there are any problems, please leave a issue
+>
+[ > Click on the link to write a issue](https://github.com/KIUT-Projects/web-cv-generator/issues)
+
+## Authors
+- @UzSoftic - Umarov Kamoliddin
+- ...
+
+## Versions
+- v0.1 - Pre release
+- ...

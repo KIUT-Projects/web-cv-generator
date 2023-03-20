@@ -49,7 +49,7 @@ class Debug extends Controller
 
         return Pdf::loadView('templates.free.test', $data)
             ->save(storage_path('test.pdf'))
-            ->download(storage_path('test.pdf'));
+            ->download('test.pdf');
             //->stream('download.pdf');
 
     }
