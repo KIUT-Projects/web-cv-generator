@@ -22,6 +22,9 @@ class CreateUsersTable extends Migration
             $table->bigInteger('phone')->nullable();
             $table->string('location')->nullable();
             $table->string('about_me')->nullable();
+            $table->boolean('is_admin')->default(false);
+            $table->boolean('is_premium')->default(false);
+            $table->boolean('is_banned')->default(false);
             $table->rememberToken();
             $table->timestamps();
         });

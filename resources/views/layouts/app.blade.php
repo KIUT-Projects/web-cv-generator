@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 
 <head>
     <meta charset="UTF-8" />
@@ -32,7 +32,6 @@
     @yield('guest')
   @endguest
 
-  @dump(session())
   @if(session()->has('success'))
       <script>
           swal({

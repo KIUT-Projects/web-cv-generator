@@ -21,6 +21,8 @@ class UserSeeder extends Seeder
             'email' => 'admin@kiut.uz',
             'email_verified_at' => now(),
             'password' => Hash::make('password'),
+            'is_admin' => true,
+            'is_premium' => true,
             'created_at' => now(),
             'updated_at' => now()
         ]);

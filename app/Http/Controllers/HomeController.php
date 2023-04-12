@@ -6,8 +6,13 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-    public function home()
+    public function index()
     {
-        return redirect('dashboard');
+        if(auth()->check()){
+            return redirect()->route('dashboard');
+        }
+        return redirect()->route('login');
     }
+
+
 }

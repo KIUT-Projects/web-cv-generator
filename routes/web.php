@@ -1,12 +1,15 @@
 <?php
 
+use App\Http\Controllers\Debug;
+use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\InfoUserController;
+
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\Auth\ResetController;
 use App\Http\Controllers\Auth\SessionsController;
-use App\Http\Controllers\Debug;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\InfoUserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,45 +23,19 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/', [HomeController::class, 'home']);
-	Route::get('dashboard', function () {
-		return view('dashboard');
-	})->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/billing', [DashboardController::class, 'billing'])->name('billing');
+    Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/user-management', [DashboardController::class, 'user_management'])->name('user-management');
+    Route::get('/tables', [DashboardController::class, 'tables'])->name('tables');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
-	Route::get('billing', function () {
-		return view('billing');
-	})->name('billing');
-
-	Route::get('profile', function () {
-		return view('profile');
-	})->name('profile');
-
-	Route::get('rtl', function () {
-		return view('rtl');
-	})->name('rtl');
-
-	Route::get('user-management', function () {
-		return view('laravel-examples/user-management');
-	})->name('user-management');
-
-	Route::get('tables', function () {
-		return view('tables');
-	})->name('tables');
-
-    Route::get('virtual-reality', function () {
-		return view('virtual-reality');
-	})->name('virtual-reality');
-
-    Route::get('static-sign-in', function () {
-		return view('static-sign-in');
-	})->name('sign-in');
-
-    Route::get('static-sign-up', function () {
-		return view('static-sign-up');
-	})->name('sign-up');
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
@@ -77,7 +54,6 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::post('/forgot-password', [ResetController::class, 'sendEmail']);
 	Route::get('/reset-password/{token}', [ResetController::class, 'resetPass'])->name('password.reset');
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
-
 });
 
 Route::get('/debug', [Debug::class, 'index'])->name('debug');
