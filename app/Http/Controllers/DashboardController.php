@@ -8,8 +8,9 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        //dump(session()->all());
-        //dump(auth()->user());
-        return view('admin.dashboard');
+        if(is_admin()){
+            return view('admin.dashboard');
+        }
+        return view('user.dashboard');
     }
 }
