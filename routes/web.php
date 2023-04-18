@@ -1,7 +1,10 @@
 <?php
 
-use App\Http\Controllers\Debug;
+use App\Http\Controllers\DebugController;
 use App\Http\Controllers\HomeController;
+
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ResumeController;
 
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\InfoUserController;
@@ -27,22 +30,26 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::group(['middleware' => 'auth'], function () {
 
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/billing', [DashboardController::class, 'billing'])->name('billing');
-    Route::get('/profile', [DashboardController::class, 'profile'])->name('profile');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/user-management', [DashboardController::class, 'user_management'])->name('user-management');
-    Route::get('/tables', [DashboardController::class, 'tables'])->name('tables');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::any('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::any('/settings', [DashboardController::class, 'settings'])->name('settings');
+
+    // CV Generate
+    Route::resource('profile', ProfileController::class);
+    Route::resource('resume', ResumeController::class);
+    Route::get('/downloads', [DashboardController::class, 'downloads'])->name('downloads');
+
+    // Additional
+    Route::get('/support', [DashboardController::class, 'support'])->name('user.support');
+    Route::get('/templates', [DashboardController::class, 'templates'])->name('user.templates');
+    Route::get('/template/{slug}', [DashboardController::class, 'template'])->name('user.template');
+    Route::get('/plans', [DashboardController::class, 'billing'])->name('user.plan');
+
 
 
     Route::get('/logout', [SessionsController::class, 'destroy']);
 	Route::get('/user-profile', [InfoUserController::class, 'create']);
 	Route::post('/user-profile', [InfoUserController::class, 'store']);
-    Route::get('/login', function () {
-		return view('dashboard');
-	})->name('sign-up');
+    Route::get('/login', function () { return view('dashboard'); })->name('sign-up');
 });
 
 Route::group(['middleware' => 'guest'], function () {
@@ -56,8 +63,5 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
 });
 
-Route::get('/debug', [Debug::class, 'index'])->name('debug');
-
-Route::get('/login', function () {
-    return view('session/login-session');
-})->name('login');
+Route::get('/login', [HomeController::class, 'login'])->name('login');
+Route::get('/debug', [DebugController::class, 'index'])->name('debug');

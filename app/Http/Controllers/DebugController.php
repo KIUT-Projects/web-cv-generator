@@ -10,7 +10,7 @@ use Barryvdh\DomPDF\Facade\Pdf;
 use Illuminate\Support\Facades\App;
 
 
-class Debug extends Controller
+class DebugController extends Controller
 {
     public function index(){
         //dump('debug started');

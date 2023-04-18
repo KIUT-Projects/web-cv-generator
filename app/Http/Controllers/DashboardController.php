@@ -13,4 +13,9 @@ class DashboardController extends Controller
         }
         return view('user.dashboard');
     }
+
+    public function downloads(){
+        $downloads = (object)[];
+        return view('user.downloads', compact('downloads'));
+    }
 }

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Resume;
 use Illuminate\Http\Request;
 
 class ResumeController extends Controller
@@ -34,7 +33,7 @@ class ResumeController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Resume $resume)
+    public function show(string $id)
     {
         //
     }
@@ -42,7 +41,7 @@ class ResumeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Resume $resume)
+    public function edit(string $id)
     {
         //
     }
@@ -50,7 +49,7 @@ class ResumeController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Resume $resume)
+    public function update(Request $request, string $id)
     {
         //
     }
@@ -58,7 +57,7 @@ class ResumeController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Resume $resume)
+    public function destroy(string $id)
     {
         //
     }
