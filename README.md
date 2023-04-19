@@ -31,6 +31,10 @@ npm install
 ```
 
 ```shell
+cp .env.example .env
+```
+
+```shell
 php artisan key:generate
 ```
 
@@ -65,6 +69,13 @@ Run Vite server (Frontend)
 ```shell
 npm run dev
 ```
+
+## Demo Datas
+> User: user@kiut.uz
+> Password: password
+>
+> Admin: admin@kiut.uz
+> Password: password
 
 ## Database Diagram
 ![Database](.github/images/database.png)
