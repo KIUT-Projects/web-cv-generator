@@ -39,7 +39,7 @@
       @foreach ($categories as $category)
         @if ($category['type'] == 'route')
           <li class="nav-item">
-            <a class="nav-link {{ is_route_active($category['route']) }}" href="{{ url($category['route']) }}">
+            <a class="nav-link {{ is_route_active($category['route']) }}" href="{{ route($category['route']) }}">
               <div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
                 <i class="{{ $category['icon'] }}"></i>
               </div>

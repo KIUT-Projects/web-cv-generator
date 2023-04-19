@@ -37,12 +37,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('profile', ProfileController::class);
     Route::resource('resume', ResumeController::class);
     Route::get('/downloads', [DashboardController::class, 'downloads'])->name('downloads');
-    Route::get('/templates', [DashboardController::class, 'templates'])->name('templates');
-    Route::get('/template/{slug}', [DashboardController::class, 'template'])->name('template');
+    Route::get('/cv_templates', [DashboardController::class, 'templates'])->name('templates');
+    Route::get('/cv_template/{slug}', [DashboardController::class, 'template'])->name('template');
 
     // Additional
     Route::get('/support', [DashboardController::class, 'support'])->name('user.support');
-    Route::get('/plans', [DashboardController::class, 'billing'])->name('user.plan');
+    Route::get('/plans', [DashboardController::class, 'plan'])->name('user.plan');
 
 
 
