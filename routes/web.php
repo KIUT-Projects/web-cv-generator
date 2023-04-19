@@ -37,11 +37,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('profile', ProfileController::class);
     Route::resource('resume', ResumeController::class);
     Route::get('/downloads', [DashboardController::class, 'downloads'])->name('downloads');
+    Route::get('/templates', [DashboardController::class, 'templates'])->name('templates');
+    Route::get('/template/{slug}', [DashboardController::class, 'template'])->name('template');
 
     // Additional
     Route::get('/support', [DashboardController::class, 'support'])->name('user.support');
-    Route::get('/templates', [DashboardController::class, 'templates'])->name('user.templates');
-    Route::get('/template/{slug}', [DashboardController::class, 'template'])->name('user.template');
     Route::get('/plans', [DashboardController::class, 'billing'])->name('user.plan');
 
 
@@ -63,5 +63,8 @@ Route::group(['middleware' => 'guest'], function () {
 	Route::post('/reset-password', [ChangePasswordController::class, 'changePassword'])->name('password.update');
 });
 
+// Login Route
 Route::get('/login', [HomeController::class, 'login'])->name('login');
+
+// Debug Route
 Route::get('/debug', [DebugController::class, 'index'])->name('debug');
