@@ -21,6 +21,6 @@ if(!function_exists('is_guest')){
 }
 if(!function_exists('is_route_active')){
     function is_route_active($route):string{
-        return (Request::is($route) ? 'active' : '');
+        return (request()->route()->getName() == $route) ? 'active' : '';
     }
 }
