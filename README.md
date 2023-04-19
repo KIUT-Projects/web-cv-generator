@@ -96,8 +96,9 @@ npm run dev
 [ > Click on the link to write a issue](https://github.com/KIUT-Projects/web-cv-generator/issues)
 
 ## Authors
-- @UzSoftic - Umarov Kamoliddin
-- ...
+- ISE-51U - Umarov Kamoliddin ([@UzSoftic](https://github.com/uzsoftic))
+- ISE-51U - Abdukhamidov Abdurakhmon ([@AbdurakhmonAbdukhamidov](https://github.com/AbdurakhmonAbdukhamidov))
+- ISE-51U - Zokirov Hojiakbar ([@Khojiakbar07](https://github.com/Khojiakbar07))
 
 ## Versions
 - v0.1 - Pre release
