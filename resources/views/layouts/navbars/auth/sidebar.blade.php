@@ -50,12 +50,12 @@
 							<div class="icon icon-shape icon-sm shadow border-radius-md bg-white text-center me-2 d-flex align-items-center justify-content-center">
 								<i class="{{ $category['icon'] }}"></i>
 							</div>
-							<span class="nav-link-text ms-1">{{ $category['name'] }}</span>
+							<span class="nav-link-text ms-1">{{ __($category['name']) }}</span>
 						</a>
 					</li>
 				@elseif ($category['type'] == 'divider')
 					<li class="nav-item mt-2">
-						<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">{{ $category['name'] }}</h6>
+						<h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">{{ __($category['name']) }}</h6>
 					</li>
 				@endif
 			@endforeach

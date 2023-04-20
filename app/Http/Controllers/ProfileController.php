@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProfileCreateRequest;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -19,13 +20,13 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.profile.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(ProfileCreateRequest $request)
     {
         //
     }
@@ -35,7 +36,8 @@ class ProfileController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $profile = [];
+        return view('user.profile.show', compact('profile'));
     }
 
     /**
@@ -43,7 +45,8 @@ class ProfileController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $profile = [];
+        return view('user.profile.edit', compact('profile'));
     }
 
     /**

@@ -6,8 +6,7 @@ use Illuminate\Http\Request;
 
 class DashboardController extends Controller
 {
-    public function index()
-    {
+    public function index(){
         if(is_admin()){
             return view('admin.dashboard');
         }
