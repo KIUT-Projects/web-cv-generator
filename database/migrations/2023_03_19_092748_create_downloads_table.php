@@ -11,8 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('resume_templates', function (Blueprint $table) {
+        Schema::create('downloads', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->integer('resume_id');
+            $table->string('title');
+            $table->string('file')->unique();
+            $table->integer('counter_downloads')->default(0);
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
         });
     }
@@ -22,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('resume_templates');
+        Schema::dropIfExists('downloads');
     }
 };

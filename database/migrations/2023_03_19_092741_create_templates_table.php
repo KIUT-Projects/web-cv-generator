@@ -11,15 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('resumes', function (Blueprint $table) {
+        Schema::create('templates', function (Blueprint $table) {
             $table->id();
-            $table->string('title')->nullable();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('profile_id')->constrained('profiles');
-            $table->foreignId('template_id')->constrained('templates');
+            $table->string('title');
+            $table->string('image')->nullable();
+            $table->string('style')->nullable();
+            $table->boolean('pro')->default(false);
+            $table->boolean('status')->default(true);
+            $table->longText('options')->nullable();
             $table->boolean('deleted')->default(0);
             $table->timestamps();
-
         });
     }
 
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('resumes');
+        Schema::dropIfExists('templates');
     }
 };

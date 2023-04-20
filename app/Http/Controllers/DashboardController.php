@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Download;
+use App\Models\Template;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -26,15 +28,17 @@ class DashboardController extends Controller
     }
 
     public function templates(){
-        return view('user.template.index');
+        $templates = Template::where('deleted', '0')->get();
+        return view('user.template.index', compact('templates'));
     }
 
     public function template(Request $request, $slug){
-        return view('user.template.show');
+        $template = Template::where('deleted', '0')->where('slug', $slug)->frist();
+        return view('user.template.show', compact('template'));
     }
 
     public function downloads(){
-        $downloads = (object)[];
+        $downloads = Download::where('deleted', '0')->get();
         return view('user.downloads', compact('downloads'));
     }
 }

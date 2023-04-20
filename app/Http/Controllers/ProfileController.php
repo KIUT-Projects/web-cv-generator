@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ProfileCreateRequest;
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -12,7 +13,8 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        return view('user.profile.index');
+        $profiles = Profile::where('deleted', '0')->get();
+        return view('user.profile.index', compact('profiles'));
     }
 
     /**

@@ -18,8 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('email_verified_at')->nullable();
+            $table->string('phone')->unique()->nullable();
+            $table->string('phone_verified_at')->nullable();
             $table->string('password');
-            $table->bigInteger('phone')->nullable();
             $table->string('location')->nullable();
             $table->string('about_me')->nullable();
             $table->boolean('is_admin')->default(false);

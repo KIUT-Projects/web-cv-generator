@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Resume;
 use Illuminate\Http\Request;
 
 class ResumeController extends Controller
@@ -11,7 +12,8 @@ class ResumeController extends Controller
      */
     public function index()
     {
-        return view('user.resume.index');
+        $resumes = Resume::where('deleted', '0')->with('user', 'profile')->get();
+        return view('user.resume.index', compact('resumes'));
     }
 
     /**
@@ -59,6 +61,6 @@ class ResumeController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        dd($id);
     }
 }

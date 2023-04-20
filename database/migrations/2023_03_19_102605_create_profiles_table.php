@@ -12,7 +12,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('people', function (Blueprint $table) {
+        Schema::create('profiles', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
             $table->string('first_name')->nullable();
@@ -20,8 +20,10 @@ return new class extends Migration
             $table->string('full_name')->nullable();
             $table->date('birthday')->nullable();
             $table->string('photo')->nullable();
-            $table->foreignId('country_id')->constrained('location_countries');
-            $table->foreignId('city_id')->constrained('location_cities');
+            $table->integer('country_id');
+            //$table->foreignId('country_id')->constrained('location_countries');
+            $table->integer('city_id');
+            //$table->foreignId('city_id')->constrained('location_cities');
             $table->text('address')->nullable();
             $table->integer('post_code')->nullable();
             $table->text('tags')->nullable();
@@ -39,6 +41,7 @@ return new class extends Migration
             $table->integer('show_age')->default(true);
             $table->integer('show_image')->default(true);
             $table->integer('show_social')->default(true);
+            $table->boolean('deleted')->default(0);
             $table->timestamps();
             //$table->foreign('user_id')->references('id')->on('users');
         });
@@ -49,6 +52,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('people');
+        Schema::dropIfExists('profiles');
     }
 };
