@@ -23,10 +23,10 @@
                             <div>
                                 <h5 class="mb-0">All Users</h5>
                             </div>
-                            <a href="#" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
+                            <a href="{{ route('profile.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
                         </div>
                     </div>
-                    <div class="card-body px-0 pt-0 pb-2">
+                    <div class="card-body px-0 my-2">
                         <div class="table-responsive p-0">
                             <table class="table align-items-center mb-0">
                                 <thead>
@@ -44,13 +44,10 @@
                                         Email
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        role
-                                    </th>
-                                    <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
                                         Creation Date
                                     </th>
                                     <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">
-                                        Action
+                                        {{ __('Action') }}
                                     </th>
                                 </tr>
                                 </thead>
@@ -62,28 +59,25 @@
                                     </td>
                                     <td>
                                         <div>
-                                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3">
+                                            <img src="../assets/img/team-3.jpg" class="avatar avatar-sm me-3">
                                         </div>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Admin</p>
+                                        <p class="text-xs font-weight-bold mb-0">Umarov Kamoliddin</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">admin@softui.com</p>
-                                    </td>
-                                    <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Admin</p>
+                                        <p class="text-xs font-weight-bold mb-0">softuzb@gmail.com</p>
                                     </td>
                                     <td class="text-center">
                                         <span class="text-secondary text-xs font-weight-bold">16/06/18</span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="#" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="Edit user">
+                                        <a href="{{ route('profile.edit', '1') }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="{{ __('Edit') }}">
                                             <i class="fas fa-user-edit text-secondary" aria-hidden="true"></i>
                                         </a>
                                         <span>
-<i class="cursor-pointer fas fa-trash text-secondary" aria-hidden="true"></i>
-</span>
+                                            <i class="cursor-pointer fas fa-trash text-secondary" aria-hidden="true" data-bs-toggle="tooltip" data-bs-original-title="{{ __('Delete') }}"></i>
+                                        </span>
                                     </td>
                                 </tr>
                                 @endforeach

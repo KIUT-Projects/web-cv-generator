@@ -47,8 +47,9 @@ class ProfileController extends Controller
      */
     public function edit(string $id)
     {
+        //dd('asdsa');
         $profile = [];
-        return view('user.profile.edit', compact('profile'));
+        return view('user.profile.edit'); // compact('profile')
     }
 
     /**

@@ -7,7 +7,6 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResumeController;
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\InfoUserController;
 
 use App\Http\Controllers\Auth\ChangePasswordController;
 use App\Http\Controllers\Auth\RegisterController;
@@ -46,8 +45,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/support', [DashboardController::class, 'support'])->name('user.support');
     Route::get('/plans', [DashboardController::class, 'plan'])->name('user.plan');
 
-	Route::get('/user-profile', [InfoUserController::class, 'create']);
-	Route::post('/user-profile', [InfoUserController::class, 'store']);
+	Route::get('/user-profile', [DashboardController::class, 'create']);
+	Route::post('/user-profile', [DashboardController::class, 'store']);
 });
 
 Route::group(['middleware' => 'guest'], function () {
