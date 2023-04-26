@@ -33,9 +33,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::any('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::any('/settings', [DashboardController::class, 'settings'])->name('settings');
 
-    // CV Generate
+    // Profile
     Route::resource('profile', ProfileController::class);
+    // Resume
     Route::resource('resume', ResumeController::class);
+
     Route::get('/downloads', [DashboardController::class, 'downloads'])->name('downloads');
     Route::get('/cv_templates', [DashboardController::class, 'templates'])->name('templates');
     Route::get('/cv_template/{slug}', [DashboardController::class, 'template'])->name('template');
