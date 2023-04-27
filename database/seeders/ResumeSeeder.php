@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Resume;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -22,7 +23,7 @@ class ResumeSeeder extends Seeder
             'created_at' => now()->subMinutes(15),
             'updated_at' => now()->subMinutes(15)
         ]);
-        DB::table('resumes')->insert([
+        Resume::insert([
             'id' => 2,
             'user_id' => 2,
             'profile_id' => 2,

@@ -6,6 +6,7 @@
         <div class="row">
 
             @foreach($resumes as $resume)
+                @dump($resume)
                 <div class="col-12 col-md-6 col-lg-4 my-3">
                     <div class="card">
                         <div class="card-header pb-0 px-3">

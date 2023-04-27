@@ -2,28 +2,19 @@
 
 @section('content')
 
-    @php
-        $profiles = [
-            [],
-            [],
-            [],
-            [],
-            [],
-            [],
-        ];
-    @endphp
-
     <div class="container-fluid">
 
         <div class="row">
             <div class="col-12">
-                <div class="card mb-4 mx-4">
+                <div class="card mb-4">
                     <div class="card-header pb-0">
                         <div class="d-flex flex-row justify-content-between">
                             <div>
                                 <h5 class="mb-0">All Users</h5>
                             </div>
-                            <a href="{{ route('profile.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button">+&nbsp; New User</a>
+                            <a href="{{ route('profile.create') }}" class="btn bg-gradient-primary btn-sm mb-0" type="button" style="font-size: .7rem;">
+                                <i class="fas fa-plus"></i> New User
+                            </a>
                         </div>
                     </div>
                     <div class="card-body px-0 my-2">
@@ -55,7 +46,7 @@
                                 @foreach($profiles as $profile)
                                 <tr>
                                     <td class="ps-4">
-                                        <p class="text-xs font-weight-bold mb-0">1</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $profile->id }}</p>
                                     </td>
                                     <td>
                                         <div>
@@ -63,21 +54,27 @@
                                         </div>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">Umarov Kamoliddin</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $profile->full_name }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <p class="text-xs font-weight-bold mb-0">softuzb@gmail.com</p>
+                                        <p class="text-xs font-weight-bold mb-0">{{ $profile->contact_email }}</p>
                                     </td>
                                     <td class="text-center">
-                                        <span class="text-secondary text-xs font-weight-bold">16/06/18</span>
+                                        <span class="text-secondary text-xs font-weight-bold">{{ $profile->birthday }}</span>
                                     </td>
                                     <td class="text-center">
-                                        <a href="{{ route('profile.edit', '1') }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="{{ __('Edit') }}">
-                                            <i class="fas fa-user-edit text-secondary" aria-hidden="true"></i>
-                                        </a>
-                                        <span>
-                                            <i class="cursor-pointer fas fa-trash text-secondary" aria-hidden="true" data-bs-toggle="tooltip" data-bs-original-title="{{ __('Delete') }}"></i>
-                                        </span>
+                                            <div class="col-12" style="display: inline-flex; align-items: center;">
+                                                <a href="{{ route('profile.edit', '1') }}" class="mx-3" data-bs-toggle="tooltip" data-bs-original-title="{{ __('Edit') }}">
+                                                    <i class="fas fa-user-edit text-secondary" aria-hidden="true"></i>
+                                                </a>
+                                                <form action="{{ route('profile.destroy', $profile->id) }}" method="POST">
+                                                    <input name="_method" type="hidden" value="DELETE">
+                                                    @csrf
+                                                    <a type="submit" onclick="this.parentNode.submit(); return false;">
+                                                        <i class="cursor-pointer fas fa-trash text-secondary" aria-hidden="true" data-bs-toggle="tooltip" data-bs-original-title="{{ __('Delete') }}"></i>
+                                                    </a>
+                                                </form>
+                                            </div>
                                     </td>
                                 </tr>
                                 @endforeach
