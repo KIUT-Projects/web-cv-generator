@@ -13,7 +13,7 @@ class ProfileController extends Controller
      */
     public function index()
     {
-        $profiles = Profile::where('deleted', '0')->get();
+        $profiles = Profile::where('deleted', '0')->latest()->get(); // where('user_id', auth()->id())->
         return view('user.profile.index', compact('profiles'));
     }
 
@@ -55,16 +55,18 @@ class ProfileController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(Request $request, Profile $profile)
     {
-        //
+        $profile->update($request->except(['_method', '_token']));
+        return redirect()->route('profile.index')->with('status', 'Profile updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Profile $profile)
     {
-        dd($id);
+        $profile->deleteOrFail();
+        return redirect()->route('profile.index')->with('status', 'Profile deleted successfully');
     }
 }

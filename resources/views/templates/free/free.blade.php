@@ -6,7 +6,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Laravel PDF Example</title>
-    <link href="{{ asset('templates/free/test.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('templates/free/free.css') }}" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <div class="container mt-5">
@@ -15,6 +15,8 @@
 
     <div class="" style="background-color: #0e456d; color: #ffffff; margin: 1rem; padding: 1rem;">
         Hello <b>World</b>!!!
+
+        <p>Free template</p>
     </div>
 
 </div>

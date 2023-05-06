@@ -18,10 +18,13 @@
                         <form method="POST" acction="{{ route('profile.store') }}">
                             Create User Form
 
+
+
                             <div class="card-footer" style="display: flex; justify-content: end;">
                                 <a href="{{ route('profile.index') }}" class="btn btn-secondary mx-2">{{ __('Cancel') }}</a>
                                 <button type="submit" class="btn btn-primary">{{ __('Submit') }}</button>
                             </div>
+
                         </form>
                     </div>
                 </div>
