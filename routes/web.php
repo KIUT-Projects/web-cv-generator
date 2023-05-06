@@ -34,6 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Profile
     Route::resource('profile', ProfileController::class);
+
     // Resume
     Route::resource('resume', ResumeController::class);
 
