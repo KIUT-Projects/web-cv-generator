@@ -1,89 +1,151 @@
 @extends('layouts.user_type.auth')
 
 @section('content')
-    <div class="row my-4">
-        <div class="col-lg-6 col-md-6 mb-md-0 mb-4">
-            <div class="card">
-                <div class="card-header pb-0">
-                    <div class="row">
-                        <div class="col-lg-6 col-7">
-                            <h6>Test</h6>
+<i class="background"></i>
+    <section>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="price-table">
+                            <div class="price-head">
+                                <h4>Free</h4>
+                                <h2>0$<span>/month</span></h2>
+                            </div>
+                            <div class="price-content">
+                                <ul>
+                                    <li>2 GB RAM</li>
+                                    <li>40 GB Storage</li>
+                                    <li>10 Email Accounts</li>
+                                    <li>Limited Support</li>
+                                </ul>
+                            </div>
+                            <div class="price-button">
+                                <a href="#">Subscribe</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="card-body px-0 pb-2">
-                    12312312312
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-6 col-md-6">
-            <div class="card h-100">
-                <div class="card-header pb-0">
-                    <h6>Orders overview</h6>
-                    <p class="text-sm">
-                        <i class="fa fa-arrow-up text-success" aria-hidden="true"></i>
-                        <span class="font-weight-bold">24%</span> this month
-                    </p>
-                </div>
-                <div class="card-body p-3">
-                    <div class="timeline timeline-one-side">
-                        <div class="timeline-block mb-3">
-    <span class="timeline-step">
-    <i class="ni ni-bell-55 text-success text-gradient"></i>
-    </span>
-                            <div class="timeline-content">
-                                <h6 class="text-dark text-sm font-weight-bold mb-0">$2400, Design changes</h6>
-                                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">22 DEC 7:20 PM</p>
+                    <div class="col-sm-4">
+                        <div class="price-table">
+                            <div class="price-head">
+                                <h4>Pro</h4>
+                                <h2>$14.99<span>/month</span></h2>
+                            </div>
+                            <div class="price-content">
+                                <ul>
+                                    <li>4 GB RAM</li>
+                                    <li>80 GB Storage</li>
+                                    <li>30 Email Accounts</li>
+                                    <li>One Year Support</li>
+                                </ul>
+                            </div>
+                            <div class="price-button">
+                                <a href="#">Subscribe</a>
                             </div>
                         </div>
-                        <div class="timeline-block mb-3">
-    <span class="timeline-step">
-    <i class="ni ni-html5 text-danger text-gradient"></i>
-    </span>
-                            <div class="timeline-content">
-                                <h6 class="text-dark text-sm font-weight-bold mb-0">New order #1832412</h6>
-                                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 11 PM</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="price-table">
+                            <div class="price-head">
+                                <h4>Premium</h4>
+                                <h2>$49.99<span>/month</span></h2>
                             </div>
-                        </div>
-                        <div class="timeline-block mb-3">
-    <span class="timeline-step">
-    <i class="ni ni-cart text-info text-gradient"></i>
-    </span>
-                            <div class="timeline-content">
-                                <h6 class="text-dark text-sm font-weight-bold mb-0">Server payments for April</h6>
-                                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">21 DEC 9:34 PM</p>
+                            <div class="price-content">
+                                <ul>
+                                    <li>16 GB RAM</li>
+                                    <li>320 GB Storage</li>
+                                    <li>Unlimited Email Accounts</li>
+                                    <li>Lifetime Support</li>
+                                </ul>
                             </div>
-                        </div>
-                        <div class="timeline-block mb-3">
-    <span class="timeline-step">
-    <i class="ni ni-credit-card text-warning text-gradient"></i>
-    </span>
-                            <div class="timeline-content">
-                                <h6 class="text-dark text-sm font-weight-bold mb-0">New card added for order #4395133</h6>
-                                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">20 DEC 2:20 AM</p>
-                            </div>
-                        </div>
-                        <div class="timeline-block mb-3">
-    <span class="timeline-step">
-    <i class="ni ni-key-25 text-primary text-gradient"></i>
-    </span>
-                            <div class="timeline-content">
-                                <h6 class="text-dark text-sm font-weight-bold mb-0">Unlock packages for development</h6>
-                                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">18 DEC 4:54 AM</p>
-                            </div>
-                        </div>
-                        <div class="timeline-block">
-    <span class="timeline-step">
-    <i class="ni ni-money-coins text-dark text-gradient"></i>
-    </span>
-                            <div class="timeline-content">
-                                <h6 class="text-dark text-sm font-weight-bold mb-0">New order #9583120</h6>
-                                <p class="text-secondary font-weight-bold text-xs mt-1 mb-0">17 DEC</p>
+                            <div class="price-button">
+                                <a href="#">Subscribe</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
+<style>
+    section{
+    padding: 60px 0;
+}
+.price-table{
+    text-align: center;
+    overflow: hidden;
+    margin: 20px;
+    background: #fff;
+    box-sizing: border-box;
+    box-shadow: inset 0 0 30px rgba(0,0,0,.2), 0 20px 40px rgba(0,0,0,.5);
+    border-radius: 20px;
+}
+.col-sm-4:nth-child(2) .price-table{
+    transform: scale(1.1);
+}
+.price-table .price-head{
+    padding: 50px;
+    background: #cb0c9f;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.price-table .price-head h4{
+    text-transform: uppercase;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-weight: 700;
+}
+.price-table .price-head h2{
+    margin: 0;
+    padding: 20px 0 0;
+    font-size: 36px;
+    color: #fff;
+}
+.price-content{
+    position: relative;
+}
+.price-content ul{
+    position: relative;
+    margin: 0;
+    padding: 20px 0;
+}
+.price-content ul li {
+    list-style: none;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: 'Oswald', sans-serif;;
+    text-transform: uppercase;
+    padding: 10px 0;
+    color: #000;
+    cursor: pointer;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    transition: .5s;
+
+}
+.price-content ul li:hover{
+    border-left: 15px solid #cb0c9f;
+    border-right: 15px solid #cb0c9f;
+}
+.price-button{
+    padding: 0 0 30px;
+}
+.price-button a{
+    padding: 10px 40px;
+    background:#cb0c9f;
+    color: #fff;
+    border-radius: 25px;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.background{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}  
+</style>
 @endsection
